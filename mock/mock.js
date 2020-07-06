@@ -19,4 +19,4 @@ const produceNewsData = function () {
   }
 }
 // 拦截ajax请求，配置mock的数据
-Mock.mock('/api/test', 'get', produceNewsData)
+Mock.mock('/api/v1/list', 'get', produceNewsData)
