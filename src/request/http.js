@@ -8,7 +8,7 @@ import store from '../store/index'
 
 //切换环境
 if (process.env.NODE_ENV == 'development') {
-  axios.defaults.baseURL = '/api';
+  axios.defaults.baseURL = '/';
 } else if (process.env.NODE_ENV == 'debug') {
   axios.defaults.baseURL = 'http://127.0.0.1:8081';
 } else if (process.env.NODE_ENV == 'production') {
@@ -54,6 +54,7 @@ axios.interceptors.response.use(
   // 列举几个常见的操作
   error => {
     if (error.response.status) {
+      console.log(error);
       switch (error.response.status) {
         // 401: 未登录，  未登录则跳转登录页面，并携带当前页面的路径；在登录成功后返回当前页面，这一步需要在登录页操作。
         case 401:
