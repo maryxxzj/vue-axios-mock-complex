@@ -20,10 +20,11 @@
  7. api统一管理
  8. 调用api接口
  
- **说明**
- 如果NodeJS已安装，忽略第一步
- 如果vue-cli已全局安装，直接进行初始化项目
- 如果淘宝镜像以全局安装，可直接安装相关依赖，并启动项目
+>如果NodeJS已安装，忽略第一步
+>
+> 如果vue-cli已全局安装，直接进行初始化项目
+>
+> 如果淘宝镜像以全局安装，可直接安装相关依赖，并启动项目
 
 ## 配置mock.js
  mockjs安装  `cnpm install mockjs --save-dev`
@@ -79,7 +80,7 @@ Mock.mock('/api/v1/list', 'get', produceNewsData)
  axios安装  `cnpm install axios --save-dev
 `
 #### 引入axios
- 一般会在项目的src目录中，新建一个request文件夹，并在里面新建一个http.js和一个api.js文件。**http.js文件用来封装axios，api.js用来统一管理接口**。
+> 一般会在项目的src目录中，新建一个request文件夹，并在里面新建一个http.js和一个api.js文件。**http.js文件用来封装axios，api.js用来统一管理接口**。
 
 在http.js中引入axios 
 * `cnpm install vant --save`  安装UI组件库vant ，使用vant库的toast轻提示组件
@@ -92,7 +93,7 @@ import { Toast } from 'vant';  // vant的toast提示框组件，ui组件可自�
 
 环境的切换
 
-项目环境可能有开发环境、测试环境和生产环境。通过**node的环境变量**来匹配默认的接口url前缀。`axios.defaults.baseURL`可以设置axios的默认请求地址。
+>项目环境可能有开发环境、测试环境和生产环境。通过**node的环境变量**来匹配默认的接口url前缀。`axios.defaults.baseURL`可以设置axios的默认请求地址。
 ~~~  
 if (process.env.NODE_ENV == 'development') {
   axios.defaults.baseURL = '/';}
