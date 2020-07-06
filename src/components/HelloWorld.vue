@@ -26,11 +26,9 @@
         },
         methods: {
             getTest() {
-                let _this = this;
                 testService.testList().then(res => {
-                    _this.dateList = res.data;
+                    this.dateList = res.data;
                 })
-                console.log(_this.dateList);
             }
         }
     }
